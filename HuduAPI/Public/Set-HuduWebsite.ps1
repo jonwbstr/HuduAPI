@@ -135,11 +135,11 @@ function Set-HuduWebsite {
     }
 
     if ($EnableSPF) {
-        $Website.website.enable_spf_tracking = $Archived
+        $Website.website.enable_spf_tracking = $EnableSPF
     }
     
     if ($Archived) {
-        $Website.website.archived = $EnableSPF
+        $Website.website.archived = $Archived
     }
 
     $JSON = $Website | ConvertTo-Json -Depth 10
