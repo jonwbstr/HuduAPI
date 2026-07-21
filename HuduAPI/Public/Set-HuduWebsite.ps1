@@ -39,9 +39,6 @@ function Set-HuduWebsite {
     .PARAMETER EnableSPF
     When true, SPF monitoring is enabled.
 
-    .PARAMETER Archived
-    When true, website is archived.
-
     .PARAMETER Slug
     Url identifier
 
@@ -82,8 +79,6 @@ function Set-HuduWebsite {
 
         [Alias('enable_spf')]
         [String]$EnableSPF = '',
-
-        [String]$Archived = '',
 
         [string]$Slug
     )
@@ -136,10 +131,6 @@ function Set-HuduWebsite {
 
     if ($EnableSPF) {
         $Website.website.enable_spf_tracking = $EnableSPF
-    }
-    
-    if ($Archived) {
-        $Website.website.archived = $Archived
     }
 
     $JSON = $Website | ConvertTo-Json -Depth 10
