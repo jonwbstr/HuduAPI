@@ -135,7 +135,7 @@ function Set-HuduWebsite {
     }
 
     if ($EnableSPF) {
-        $Website.website.enable_spf_tracking = $EnableSPF
+        $Website.website.enable_spf_tracking = $Archived
     }
     
     if ($Archived) {
